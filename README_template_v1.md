@@ -11,11 +11,11 @@ This investigation sheet helps you gather key technical information from the thr
 
 | Criteria | Details |
 |---------|---------|
-| API Base URL | `_______________________________` |
-| Authentication Method | `_______________________________` |
-| Endpoint to list rooms | `_______________________________` |
-| Endpoint to get messages | `_______________________________` |
-| Endpoint to send message | `_______________________________` |
+| API Base URL | `https://webexapis.com` |
+| Authentication Method | `Bearer Authentication Method` |
+| Endpoint to list rooms | `/v1/rooms/` |
+| Endpoint to get messages | `/v1/messages/{messageId}` |
+| Endpoint to send message | `/v1/messages/` |
 | Required headers | `_______________________________` |
 | Sample full GET or POST request | `_______________________________` |
 
