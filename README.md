@@ -12,12 +12,12 @@ This investigation sheet helps you gather key technical information from the thr
 | Criteria | Details |
 |---------|---------|
 | API Base URL | `https://webexapis.com` |
-| Authentication Method | `Bearer Authentication Method` |
-| Endpoint to list rooms | `/v1/rooms/` |
-| Endpoint to get messages | `/v1/messages/` |
-| Endpoint to send message | `/v1/messages/` |
+| Authentication Method | `Bearer Token Authentication` |
+| Endpoint to list rooms | `/v1/rooms` |
+| Endpoint to get messages | `/v1/messages` |
+| Endpoint to send message | `/v1/messages` |
 | Required headers | `"Authorization": "Bearer (Token here), "Content-Type": "application/json", "Accept": "application/json"` |
-| Sample full GET or POST request | `_______________________________` |
+| Sample full GET or POST request | `GET https://webexapis.com/v1/rooms, Headers: Authorization: Bearer (Token here), Accept: application/json` |
 
 ---
 
