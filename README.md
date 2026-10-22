@@ -117,8 +117,8 @@ In this section, evaluate how web technologies, architecture, and design pattern
 
 Explain how the client–server model applies to your AstroBot:
 
-- Identify the **client** 
-- Identify the **server(s)** 
+- Client: The user interacting with AstroBot through a Webex room. 
+- Servers: Webex API server, OpenWeather API server, Open Notify ISS API server.
 - Describe how data flows between:
   - User, AstroBot and APIs
 
