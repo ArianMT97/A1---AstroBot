@@ -1,4 +1,3 @@
-[README_template_v1.md](https://github.com/user-attachments/files/33822292/README_template_v1.md)
 # 🚀 Space Bot API Investigation Sheet
 
 **Total Marks: 40**  
