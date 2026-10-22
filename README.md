@@ -53,16 +53,13 @@ This investigation sheet helps you gather key technical information from the thr
 
 | Criteria | Details |
 |---------|---------|
-| API Provider (Choose one) | **OpenWeather, OpenWeatherMap (or other – provide details)** |
-| API Base URL | `_______________________________` |
-| Endpoint for current weather | `_______________________________` |
-| Authentication method | `_______________________________` |
-| Required query parameters | `_______________________________` |
-| Sample JSON response (formatted example) |  
-```
+| API Provider | `OpenWeatherMap` |
+| API Base URL | `https://api.openweathermap.org` |
+| Endpoint for current weather | `/data/2.5/weather` |
+| Authentication method | `API Key using the 'appid' query parameter` |
+| Required query parameters | `lat, lon, appid` |
+| Sample JSON response (formatted example) | `{"weather": [{"description": "moderate rain"}], "main": {"temp": 12.5, "humidity": 81}, "wind": {"speed": 4.2},"name": "London", "sys": {"country": "GB"}}` |
 
-```
-|
 
 ---
 
