@@ -25,13 +25,10 @@ This investigation sheet helps you gather key technical information from the thr
 
 | Criteria | Details |
 |---------|---------|
-| API Base URL | `_______________________________` |
-| Endpoint for current ISS location | `_______________________________` |
-| Sample response format (example JSON) |  
-```
+| API Base URL | `http://api.open-notify.org` |
+| Endpoint for current ISS location | `/iss-now.json` |
+| Sample response format (example JSON) | `{"message": "success", "timestamp": 1792685841, "iss_position": {"longitude": "135.0001", "latitude": "26.2250"}}` |
 
-```
-|
 
 ---
 
