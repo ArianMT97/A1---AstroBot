@@ -36,18 +36,15 @@ This investigation sheet helps you gather key technical information from the thr
 
 | Criteria | Details |
 |---------|---------|
-| Provider used (Choose one) | **LocationIQ / Mapbox/ OpenWeatherMap other -provide detail** |
-| API Base URL | `_______________________________` |
-| Endpoint for geocoding | `_______________________________` |
-| Endpoint for reverse geocoding | `_______________________________` |
-| Authentication method | `_______________________________` |
-| Required query parameters | `_______________________________` |
-| Sample request with latitude/longitude | `_______________________________` |
-| Sample JSON response (formatted example) |  
-```
+| Provider used | `OpenWeatherMap` |
+| API Base URL | `http://api.openweathermap.org` |
+| Endpoint for geocoding | `/geo/1.0/direct` |
+| Endpoint for reverse geocoding | `/geo/1.0/reverse` |
+| Authentication method | `API Key using the 'appid' query parameter` |
+| Required query parameters | `Direct geocoding: q (city name/country, e.g. London,GB), appid (OpenWeather API key), Reverse geocoding: lat, lon, appid` |
+| Sample request with latitude/longitude | `http://api.openweathermap.org/geo/1.0/reverse?lat=51.5098&lon=-0.1180&limit=5&appid={API key}` |
+| Sample JSON response (formatted example) | `{"name": "London", "lat": 51.5098, "lon": -0.1180, "country": "GB"}` |
 
-```
-|
 
 ---
 
