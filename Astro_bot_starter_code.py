@@ -1,17 +1,10 @@
-#Contains partially completed code with sections for you to complete
-#IT IS MANDATORY TO USE THE RESOURCE PROVIDED
-#The starter code is structured into functions and modules. You are required to complete the missing sections while maintaining this modular design.  Further step by step instructions can be found in the appendix A of this assignment brief. 
-#For extended features implement it within the existing modular structure. The new feature must be triggered using a new command (e.g., /stars, /moon, /sky) and follow the same approach 
-#Use Git for version control. Maintain a repository on GitHub to track your project’s progress and changes. Ensure regular commits for each step with meaningful messages that document your step by stepdevelopment process. 
-
-# =========================
 # REQUIRED LIBRARIES
 # =========================
 
-import #complete the import statement to include the requests library
-import #complete the import statement to include the json library
-import #complete the import statement to include the time library
-from #complete the import statement to include the datetime library
+import requests
+import json
+import time
+from datetime import datetime
 
 # =========================
 # CONFIGURATION FUNCTIONS
@@ -25,11 +18,13 @@ def get_webex_token():
         return "Bearer YOUR_WEBEX_TOKEN"
 
 def get_api_key(prompt, hardcoded_key):
-  #complete the function to get the API key from user input or use a hardcoded key
+    choice = input(f"Use hard-coded {prompt}? (y/n): ").lower()
 
-# =========================
-# WEBEX FUNCTIONS
-# =========================
+    if choice == "n":
+        return input(f"Enter your {prompt}: ")
+    else:
+        return hardcoded_key
+
 def get_rooms(token):
     url = #complete the URL to fetch rooms from Webex API
     headers = #complete the headers dictionary to include the Authorization header with the token
