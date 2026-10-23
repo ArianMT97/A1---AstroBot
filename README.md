@@ -119,10 +119,9 @@ Explain how the client–server model applies to your AstroBot:
 
 - Client: The user interacting with AstroBot through a Webex room. 
 - Servers: Webex API server, OpenWeather API server, Open Notify ISS API server.
-- Describe how data flows between:
-  - User, AstroBot and APIs
+- When the user sends a command in the Webex room, AstroBot checks the latest message using the Webex Messaging API. If the command is /weather, the bot first uses the OpenWeather Geocoding API to convert the city name into latitude and longitude. These coordinates are then sent to the OpenWeather Weather API to retrieve current weather information. If the command is /iss, the bot retrieves the current ISS coordinates from the Open Notify API and then uses the OpenWeather Reverse Geocoding API to try to identify a nearby location. The returned JSON data is processed by AstroBot and formatted into a readable message. AstroBot then sends the response back to the Webex room using the Webex Messaging API.
+- User → Webex → AstroBot → APIs → AstroBot → Webex → User
 
-Include a **simple block diagram** to illustrate this interaction.
 
 ####  Security Considerations: (3 marks )
 - Consider but not limiting to secure handling of API keys and tokens, API rate limiting, and Input validation (e.g., handling user commands safely), include examples from code where necessary to illustrate.
