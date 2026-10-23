@@ -132,16 +132,15 @@ Explain how the client–server model applies to your AstroBot:
 
 ###  RESTful API Usage in Your Application (3 marks )
 
-Explain how REST APIs are used in your AstroBot: 
-
-- Describe how HTTP methods (GET, POST) are used  
-- Explain how your bot interacts with APIs (Webex, Weather, ISS, Geocoding)  
-- Describe how JSON responses are received and processed  
-
-Note: Relate your explanation directly to your code for higher grade. 
+- AstroBot uses REST APIs to communicate with Webex, OpenWeather and Open Notify. The bot uses HTTP GET requests to retrieve data and POST requests to send data.
+- GET requests are used to retrieve Webex rooms, retrieve the latest Webex message, get city coordinates from the OpenWeather Geocoding API, retrieve current weather data, retrieve the current ISS position and reverse geocode the ISS coordinates.
+- A POST request is used when AstroBot sends a message back to the selected Webex room.
+- The APIs return data in JSON format. AstroBot uses response.json() to convert the JSON response into Python data. The program then selects the required values, such as temperature, humidity, wind speed, latitude and longitude, and formats them into readable messages before sending them to Webex. For example, the weather function accesses values such as weather['main']['temp'], weather['main']['humidity'] and weather['weather'][0]['description'].
 
 #### Security Considerations: (2 marks)
-- Check response status codes, Handling invalid or unexpected API responses, Avoiding excessive API calls
+- AstroBot checks API response status codes before trying to use the returned data. For example, the program checks whether response.status_code != 200 and returns an error message or None if the request was unsuccessful.
+- The program also handles empty or invalid responses. For example, the geocoding functions return None if no location is found, and the weather function returns City not found. if the city cannot be matched.
+- To avoid excessive API calls, AstroBot waits five seconds between Webex message checks using time.sleep(5). This reduces unnecessary repeated requests and helps lower the risk of reaching API rate limits.
 
 ---
 
