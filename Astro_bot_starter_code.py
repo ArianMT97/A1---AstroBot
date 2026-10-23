@@ -119,10 +119,10 @@ def get_weather(city, api_key):
 # ISS FUNCTIONS
 # =========================
 def reverse_geocode(lat, lon, api_key):
-    url = #complete the URL to fetch reverse geocoding data from OpenWeatherMap API
-    params = #complete the params dictionary to include the latitude, longitude, limit, and the API key
+    url = "https://api.openweathermap.org/geo/1.0/reverse"
+    params = {"lat": lat, "lon": lon, "limit": 1, "appid": api_key}
 
-    response = requests.#complete(url, params=params)
+    response = requests.get(url, params=params)
 
     if response.status_code != 200:
         return None
@@ -132,29 +132,30 @@ def reverse_geocode(lat, lon, api_key):
 
 
 def get_iss_location(api_key):
-    url = #complete the URL to fetch ISS current location from the Open Notify API
+    url = "http://api.open-notify.org/iss-now.json"
 
-    response = requests.#complete(#complete)
+    response = requests.get(url)
 
     if response.status_code != 200:
-        return #complete the return statement to indicate whether ISS location retrieved or not
+        return "ISS location could not be retrieved."
 
     data = response.json()
 
-    lat = data[#complete][#complete]
-    lon = data[#complete][#complete]
+    lat = data["iss_position"]["latitude"]
+    lon = data["iss_position"]["longitude"]
 
     location = reverse_geocode(lat, lon, api_key)
 
     place = "Over Ocean / No Nearby City"
 
     if location:
-        place = #
+        place = f"{location['name']}, {location['country']}"
 
-    return (
-        #complete the return statement to format and return the ISS location information including latitude, longitude, and place name
-    )
+    return (f"ISS Latitude: {lat}\n"
+            f"ISS Longitude: {lon}\n"
+            f"Location: {place}")
 
+        
 # =========================
 # MAIN BOT LOGIC
 # =========================
