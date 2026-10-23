@@ -146,14 +146,11 @@ Explain how the client–server model applies to your AstroBot:
 
 ###  MVC Design Pattern in AstroBot (3 Marks)
 
-Explain how the **Model–View–Controller (MVC)** pattern applies to your solution:
-Provide a short example based on your implementation
-
 | Component   | Description and Example (Relate to your Bot) |
 |------------|----------------------------------|
-| **Model**  |  |
-| **View**   |  |
-| **Controller** |  |
+| **Model**  | The functions that retrieve and process the data from the APIs. For example get_weather(), get_city_coordinates(), get_iss_location() and reverse_geocode(). |
+| **View**   | The messages shown to the user in the Webex room, such as help messages, weather information and ISS location information.  |
+| **Controller** | The main() function which checks the user's command and decides which function to use. For example, /weather calls get_weather() and /iss calls get_iss_location() |
 
 ---
 
