@@ -38,7 +38,7 @@
 | Endpoint for reverse geocoding | `/geo/1.0/reverse` |
 | Authentication method | `API Key using the 'appid' query parameter` |
 | Required query parameters | `Direct geocoding: q (city name/country, e.g. London,GB), appid (OpenWeather API key), Reverse geocoding: lat, lon, appid` |
-| Sample request with latitude/longitude | `http://api.openweathermap.org/geo/1.0/reverse?lat=51.5098&lon=-0.1180&limit=5&appid={API key}` |
+| Sample request with latitude/longitude | `https://api.openweathermap.org/geo/1.0/reverse?lat=51.5098&lon=-0.1180&limit=5&appid={API key}` |
 | Sample JSON response (formatted example) | `{"name": "London", "lat": 51.5098, "lon": -0.1180, "country": "GB"}` |
 
 
@@ -148,7 +148,7 @@ print(rTime)
 
 ### 📝 Reflection and Evaluation
 
-Astrobot is effective at meeting the basic needs of the Astronomy Club since it can provide useful information through simple commands in the Webex room. The /weather command allows the user to check current weather conditions for a city, which would help with planning astronomy activities. The /iss command gives the current location of the International Space Station (ISS) and attempts to locate a nearby place using reverse geocoding. There is also the /help command which makes the bot easier to use by showing available commands. 
+AstroBot is effective at meeting the basic needs of the Astronomy Club since it can provide useful information through simple commands in the Webex room. The /weather command allows the user to check current weather conditions for a city, which would help with planning astronomy activities. The /iss command gives the current location of the International Space Station (ISS) and attempts to locate a nearby place using reverse geocoding. There is also the /help command which makes the bot easier to use by showing available commands. 
 The design decision that worked well in this project was the fact that the program was separated into multiple functions with specific purposes. This made the program much easier to test since I could test individual sections after completing them before connecting everything together in the main() function. The biggest challenge was integrating several different APIs since each API uses slightly different URLs, parameters and response formats. I had to understand the JSON structure returned by each API so that the correct values could be accessed in Python. For security reasons I avoided storing my real Webex token and OpenWeather API key directly in the code, instead the program only asks for these credentials when it is running. In the future, AstroBot could be improved by adding more detailed error handling and stronger input validation. For example, the /weather command could check the format of the city name more carefully. The bot could also be extended with extra astronomy features such as moon phase information or other space-related data.
 
 ---
