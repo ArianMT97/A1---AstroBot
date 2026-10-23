@@ -124,7 +124,9 @@ Explain how the client–server model applies to your AstroBot:
 
 
 ####  Security Considerations: (3 marks )
-- Consider but not limiting to secure handling of API keys and tokens, API rate limiting, and Input validation (e.g., handling user commands safely), include examples from code where necessary to illustrate.
+- AstroBot handles API keys and tokens by allowing them to be entered at runtime instead of requiring them to be stored directly in the source code. This reduces the risk of accidentally exposing credentials in the GitHub repository. The program also checks API response status codes before processing the returned data. For example, if the Webex room request does not return status code 200, the program prints an error and returns an empty list.
+- Input validation is also used when processing commands. AstroBot only processes messages that begin with /, and unknown commands return the message Unknown command. Use /help. The /weather command also checks whether a city name has been entered before making the API request.
+- To reduce excessive API requests, the bot waits five seconds between checks using time.sleep(5). This helps prevent unnecessary repeated requests to the Webex API.
 
 ---
 
